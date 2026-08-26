@@ -1,18 +1,14 @@
 {
-  "name": "double-elixir-backend",
+  "name": "telegram-bot-estoque",
   "version": "1.0.0",
-  "description": "Backend do DOUBLE ELIXIR INFINITO!!",
-  "main": "server.js",
+  "private": true,
+  "description": "Bot Telegram para gerenciamento de estoque de c\u00f3digos e retirada por backend ap\u00f3s pagamento aprovado.",
+  "main": "telegram-bot.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
-  },
-  "engines": {
-    "node": ">=18"
+    "start": "node telegram-bot.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "mercadopago": "^2.7.0"
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
   }
 }
