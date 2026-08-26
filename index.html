@@ -4,151 +4,890 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>DOUBLE ELIXIR INFINITO!!</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
-font-family:Arial,sans-serif;color:#fff;min-height:100vh;
-background:radial-gradient(circle at 50% 0,#34116b 0,transparent 38%),
+font-family:Arial,sans-serif;
+color:#fff;
+min-height:100vh;
+background:
+radial-gradient(circle at 50% 0,#34116b 0,transparent 38%),
 linear-gradient(180deg,#090914,#040409 75%);
 }
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;
-background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
-background-size:55px 55px}
-.wrap{width:min(980px,92%);margin:auto;padding:35px 0 60px}
-header{text-align:center;margin-bottom:35px}
-.logo{width:105px;height:105px;object-fit:cover;border-radius:27px;
-box-shadow:0 0 35px #762cff88;margin-bottom:18px}
-h1{font-size:clamp(32px,7vw,58px);font-weight:1000}
-h1 span{color:#a53cff;text-shadow:0 0 22px #8c22ff77}
-.subtitle{color:#9696a8;margin-top:12px;font-size:16px}
-.card{background:rgba(12,12,22,.9);border:1px solid #ffffff14;border-radius:26px;
-padding:30px;box-shadow:0 20px 70px #0008;margin-bottom:22px}
-.card h2{text-align:center;font-size:25px;margin-bottom:8px}
-.card p{text-align:center;color:#888;margin-bottom:22px}
-input{width:100%;height:58px;background:#07070d;border:1px solid #ffffff15;
-border-radius:14px;color:white;padding:0 18px;font-size:16px;margin-bottom:14px;outline:none}
-input:focus{border-color:#9634ff;box-shadow:0 0 20px #8c27ff22}
-.btn{width:100%;height:58px;border:0;border-radius:14px;background:linear-gradient(90deg,#6418ff,#ac3bff);
-color:#fff;font-size:16px;font-weight:900;cursor:pointer}
-#plans{display:none}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
-.plan{position:relative;padding:25px 20px;border-radius:21px;background:#10101b;
-border:1px solid #ffffff12;text-align:center}
-.plan.destaque{border:2px solid #9c38ff;box-shadow:0 0 30px #8d28ff22}
-.tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-background:linear-gradient(90deg,#7d22ff,#bd3fff);padding:6px 13px;border-radius:20px;font-size:11px;font-weight:bold}
-.icon{font-size:38px;margin:8px}
-.plan h3{font-size:22px}
-.days{color:#a840ff;font-size:13px;margin-top:5px}
-.price{font-size:31px;color:#ffd02f;font-weight:1000;margin:18px}
-.small{font-size:13px;color:#888;margin-bottom:18px}
-#delivery{display:none}
-.delivery{text-align:center}
-.success{font-size:52px;margin-bottom:10px}
-.product{margin:20px 0;padding:20px;border-radius:16px;background:#080811;border:1px solid #8f31ff55}
-.code{font-size:22px;font-weight:900;color:#d08aff;word-break:break-all;margin:10px 0}
-.copy{background:#242036;margin-top:10px}
-.notice{color:#8d8d9d!important;font-size:13px}
-footer{text-align:center;color:#555;font-size:12px;margin-top:25px}
-@media(max-width:760px){.plans{grid-template-columns:1fr}.wrap{padding-top:22px}.card{padding:22px 17px}}
+
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.06;
+background-image:
+linear-gradient(#fff 1px,transparent 1px),
+linear-gradient(90deg,#fff 1px,transparent 1px);
+background-size:55px 55px
+}
+
+.wrap{
+width:min(980px,92%);
+margin:auto;
+padding:35px 0 60px
+}
+
+header{
+text-align:center;
+margin-bottom:35px
+}
+
+.logo{
+width:105px;
+height:105px;
+object-fit:cover;
+border-radius:27px;
+box-shadow:0 0 35px #762cff88;
+margin-bottom:18px
+}
+
+h1{
+font-size:clamp(32px,7vw,58px);
+font-weight:1000
+}
+
+h1 span{
+color:#a53cff;
+text-shadow:0 0 22px #8c22ff77
+}
+
+.subtitle{
+color:#9696a8;
+margin-top:12px;
+font-size:16px
+}
+
+.card{
+background:rgba(12,12,22,.9);
+border:1px solid #ffffff14;
+border-radius:26px;
+padding:30px;
+box-shadow:0 20px 70px #0008;
+margin-bottom:22px
+}
+
+.card h2{
+text-align:center;
+font-size:25px;
+margin-bottom:8px
+}
+
+.card p{
+text-align:center;
+color:#888;
+margin-bottom:22px
+}
+
+input{
+width:100%;
+height:58px;
+background:#07070d;
+border:1px solid #ffffff15;
+border-radius:14px;
+color:white;
+padding:0 18px;
+font-size:16px;
+margin-bottom:14px;
+outline:none
+}
+
+input:focus{
+border-color:#9634ff;
+box-shadow:0 0 20px #8c27ff22
+}
+
+.btn{
+width:100%;
+height:58px;
+border:0;
+border-radius:14px;
+background:linear-gradient(90deg,#6418ff,#ac3bff);
+color:#fff;
+font-size:16px;
+font-weight:900;
+cursor:pointer
+}
+
+.btn:disabled{
+opacity:.5;
+cursor:not-allowed
+}
+
+#plans,
+#payment,
+#delivery{
+display:none
+}
+
+.plans{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:22px
+}
+
+.plan{
+position:relative;
+padding:25px 20px;
+border-radius:21px;
+background:#10101b;
+border:1px solid #ffffff12;
+text-align:center
+}
+
+.plan.destaque{
+border:2px solid #9c38ff;
+box-shadow:0 0 30px #8d28ff22
+}
+
+.tag{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(90deg,#7d22ff,#bd3fff);
+padding:6px 13px;
+border-radius:20px;
+font-size:11px;
+font-weight:bold
+}
+
+.icon{
+font-size:38px;
+margin:8px
+}
+
+.plan h3{
+font-size:22px
+}
+
+.days{
+color:#a840ff;
+font-size:13px;
+margin-top:5px
+}
+
+.price{
+font-size:31px;
+color:#ffd02f;
+font-weight:1000;
+margin:18px
+}
+
+.small{
+font-size:13px;
+color:#888;
+margin-bottom:18px
+}
+
+.pix-box{
+text-align:center
+}
+
+.qr{
+width:260px;
+height:260px;
+background:#fff;
+padding:10px;
+border-radius:16px;
+margin:15px auto;
+display:block
+}
+
+.pix-code{
+width:100%;
+min-height:100px;
+resize:none;
+background:#07070d;
+border:1px solid #ffffff15;
+border-radius:14px;
+color:#ddd;
+padding:14px;
+font-size:13px;
+outline:none;
+margin:10px 0 14px
+}
+
+.status{
+padding:15px;
+border-radius:14px;
+background:#080811;
+border:1px solid #ffffff12;
+color:#ffd02f;
+margin:15px 0;
+font-weight:bold
+}
+
+.product{
+margin:20px 0;
+padding:20px;
+border-radius:16px;
+background:#080811;
+border:1px solid #8f31ff55;
+text-align:left
+}
+
+.product-row{
+margin:15px 0
+}
+
+.product-title{
+font-size:12px;
+color:#888;
+margin-bottom:7px
+}
+
+.product-value{
+background:#10101b;
+border-radius:10px;
+padding:12px;
+word-break:break-all;
+color:#d08aff;
+font-weight:bold
+}
+
+.copy{
+margin-top:8px;
+height:45px
+}
+
+.success{
+font-size:52px;
+margin-bottom:10px;
+text-align:center
+}
+
+.notice{
+color:#8d8d9d!important;
+font-size:13px
+}
+
+.error{
+background:#3b1118;
+border:1px solid #ff3b5c;
+color:#ff9aaa;
+padding:14px;
+border-radius:12px;
+margin:15px 0;
+display:none
+}
+
+footer{
+text-align:center;
+color:#555;
+font-size:12px;
+margin-top:25px
+}
+
+@media(max-width:760px){
+.plans{
+grid-template-columns:1fr
+}
+
+.wrap{
+padding-top:22px
+}
+
+.card{
+padding:22px 17px
+}
+
+.qr{
+width:230px;
+height:230px
+}
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
 
 <header>
 <img src="logo.png" class="logo" alt="DOUBLE ELIXIR">
-<h1>DOUBLE <span>ELIXIR INFINITO!!</span></h1>
-<p class="subtitle">Escolha seu plano e receba seu produto automaticamente.</p>
+
+<h1>
+DOUBLE <span>ELIXIR INFINITO!!</span>
+</h1>
+
+<p class="subtitle">
+Escolha seu plano e receba seu produto automaticamente.
+</p>
 </header>
 
+
+<!-- IDENTIFICAÇÃO -->
+
 <section class="card" id="identificacao">
+
 <h2>Identifique-se</h2>
-<p>Digite seus dados para continuar.</p>
-<input id="nome" placeholder="Digite seu nome">
-<input id="id" placeholder="Digite seu ID">
-<button class="btn" onclick="continuar()">CONTINUAR</button>
+
+<p>
+Digite seus dados para continuar.
+</p>
+
+<input
+id="nome"
+placeholder="Digite seu nome"
+autocomplete="name"
+>
+
+<input
+id="id"
+placeholder="Digite seu ID"
+>
+
+<input
+id="email"
+type="email"
+placeholder="Digite seu e-mail"
+autocomplete="email"
+>
+
+<button class="btn" onclick="continuar()">
+CONTINUAR
+</button>
+
+<div id="erroIdentificacao" class="error"></div>
+
 </section>
+
+
+<!-- PLANOS -->
 
 <section class="card" id="plans">
+
 <h2>Escolha seu plano</h2>
-<p>Selecione uma opção para continuar com a compra.</p>
+
+<p>
+Selecione uma opção para continuar com a compra.
+</p>
 
 <div class="plans">
+
 <div class="plan">
-<div class="icon">⚡</div><h3>Semanal</h3><div class="days">7 DIAS</div>
-<div class="price">R$ 19,99</div><div class="small">Entrega automática após pagamento</div>
-<button class="btn" onclick="comprar('Semanal','19,99')">COMPRAR</button>
+
+<div class="icon">⚡</div>
+
+<h3>Semanal</h3>
+
+<div class="days">7 DIAS</div>
+
+<div class="price">R$ 19,99</div>
+
+<div class="small">
+Entrega automática após pagamento
 </div>
+
+<button
+class="btn"
+onclick="comprar('semanal')"
+>
+COMPRAR
+</button>
+
+</div>
+
 
 <div class="plan destaque">
-<div class="tag">MAIS VENDIDO</div>
-<div class="icon">👑</div><h3>Mensal</h3><div class="days">30 DIAS</div>
-<div class="price">R$ 29,99</div><div class="small">Entrega automática após pagamento</div>
-<button class="btn" onclick="comprar('Mensal','29,99')">COMPRAR</button>
+
+<div class="tag">
+MAIS VENDIDO
 </div>
+
+<div class="icon">👑</div>
+
+<h3>Mensal</h3>
+
+<div class="days">30 DIAS</div>
+
+<div class="price">R$ 29,99</div>
+
+<div class="small">
+Entrega automática após pagamento
+</div>
+
+<button
+class="btn"
+onclick="comprar('mensal')"
+>
+COMPRAR
+</button>
+
+</div>
+
 
 <div class="plan">
-<div class="icon">∞</div><h3>Anual</h3><div class="days">1 ANO</div>
-<div class="price">R$ 59,99</div><div class="small">Entrega automática após pagamento</div>
-<button class="btn" onclick="comprar('Anual','59,99')">COMPRAR</button>
+
+<div class="icon">∞</div>
+
+<h3>Anual</h3>
+
+<div class="days">1 ANO</div>
+
+<div class="price">R$ 59,99</div>
+
+<div class="small">
+Entrega automática após pagamento
 </div>
+
+<button
+class="btn"
+onclick="comprar('anual')"
+>
+COMPRAR
+</button>
+
 </div>
+
+</div>
+
+<div id="erroPlano" class="error"></div>
+
 </section>
+
+
+<!-- PAGAMENTO -->
+
+<section class="card" id="payment">
+
+<div class="pix-box">
+
+<h2>Pagamento via Pix</h2>
+
+<p id="paymentDescription">
+Escaneie o QR Code ou copie o código Pix.
+</p>
+
+<img
+id="qrCode"
+class="qr"
+alt="QR Code Pix"
+>
+
+<textarea
+id="pixCode"
+class="pix-code"
+readonly
+></textarea>
+
+<button
+class="btn"
+onclick="copiarPix()"
+>
+COPIAR PIX
+</button>
+
+<div class="status" id="paymentStatus">
+Aguardando pagamento...
+</div>
+
+<div id="erroPagamento" class="error"></div>
+
+</div>
+
+</section>
+
+
+<!-- ENTREGA -->
 
 <section class="card" id="delivery">
+
 <div class="delivery">
-<div class="success">✓</div>
-<h2>Produto liberado!</h2>
-<p>Seu pagamento foi confirmado.</p>
+
+<div class="success">
+✓
+</div>
+
+<h2>
+Produto liberado!
+</h2>
+
+<p>
+Seu pagamento foi confirmado.
+</p>
+
 <div class="product">
-<div>SEU PRODUTO</div>
-<div class="code" id="productCode">AGUARDANDO ENTREGA</div>
-<button class="btn copy" onclick="copiar()">COPIAR PRODUTO</button>
+
+<div class="product-row">
+
+<div class="product-title">
+INSTALAÇÃO ANDROID
 </div>
-<p class="notice">A entrega real será preenchida automaticamente pelo servidor após a confirmação do pagamento.</p>
+
+<div
+class="product-value"
+id="androidLink"
+>
+-
 </div>
+
+<button
+class="btn copy"
+onclick="copiarCampo('androidLink')"
+>
+COPIAR LINK ANDROID
+</button>
+
+</div>
+
+
+<div class="product-row">
+
+<div class="product-title">
+INSTALAÇÃO iOS
+</div>
+
+<div
+class="product-value"
+id="iosLink"
+>
+-
+</div>
+
+<button
+class="btn copy"
+onclick="copiarCampo('iosLink')"
+>
+COPIAR LINK iOS
+</button>
+
+</div>
+
+
+<div class="product-row">
+
+<div class="product-title">
+CÓDIGO DE ACESSO
+</div>
+
+<div
+class="product-value"
+id="accessCode"
+>
+-
+</div>
+
+<button
+class="btn copy"
+onclick="copiarCampo('accessCode')"
+>
+COPIAR CÓDIGO
+</button>
+
+</div>
+
+</div>
+
+<p class="notice">
+Guarde essas informações. Elas são referentes ao seu pedido.
+</p>
+
+</div>
+
 </section>
 
-<footer>© 2026 DOUBLE ELIXIR INFINITO!!</footer>
+
+<footer>
+© 2026 DOUBLE ELIXIR INFINITO!!
+</footer>
+
 </div>
 
+
 <script>
-let cliente={nome:"",id:"",plano:"",valor:""};
+
+let cliente = {
+nome:"",
+id:"",
+email:"",
+plano:"",
+orderId:""
+};
+
+
+function mostrarErro(id,mensagem){
+
+const elemento=document.getElementById(id);
+
+elemento.textContent=mensagem;
+elemento.style.display="block";
+
+}
+
+
+function esconderErro(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
 
 function continuar(){
-cliente.nome=document.getElementById("nome").value.trim();
-cliente.id=document.getElementById("id").value.trim();
-if(!cliente.nome)return alert("Digite seu nome.");
-if(!cliente.id)return alert("Digite seu ID.");
+
+esconderErro("erroIdentificacao");
+
+const nome=document.getElementById("nome").value.trim();
+const id=document.getElementById("id").value.trim();
+const email=document.getElementById("email").value.trim();
+
+if(!nome){
+mostrarErro("erroIdentificacao","Digite seu nome.");
+return;
+}
+
+if(!id){
+mostrarErro("erroIdentificacao","Digite seu ID.");
+return;
+}
+
+if(!email || !email.includes("@")){
+mostrarErro("erroIdentificacao","Digite um e-mail válido.");
+return;
+}
+
+cliente.nome=nome;
+cliente.id=id;
+cliente.email=email;
+
 document.getElementById("identificacao").style.display="none";
 document.getElementById("plans").style.display="block";
-window.scrollTo({top:0,behavior:"smooth"});
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
-function comprar(plano,valor){
+
+async function comprar(plano){
+
+esconderErro("erroPlano");
+
+const botoes=document.querySelectorAll("#plans .btn");
+
+botoes.forEach(btn=>{
+btn.disabled=true;
+});
+
+try{
+
 cliente.plano=plano;
-cliente.valor=valor;
 
-/*
-  PAGAMENTO REAL:
-  aqui será conectado ao backend/Pix.
-  O servidor receberá:
-  nome, id, plano e valor.
-*/
-alert("Plano "+plano+" selecionado. O pagamento será aberto aqui quando o backend estiver conectado.");
+const response=await fetch("/api/pix/create",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+nome:cliente.nome,
+playerId:cliente.id,
+email:cliente.email,
+plano:cliente.plano
+
+})
+
+});
+
+
+const data=await response.json();
+
+if(!response.ok || !data.success){
+
+throw new Error(
+data.error || "Não foi possível criar o pagamento."
+);
+
 }
+
+
+cliente.orderId=data.orderId;
+
+document.getElementById("plans").style.display="none";
+document.getElementById("payment").style.display="block";
+
+document.getElementById("paymentDescription").textContent=
+"Plano "+data.planoNome+
+" — R$ "+Number(data.valor).toFixed(2).replace(".",",");
+
+
+const qr=document.getElementById("qrCode");
+
+if(data.pix.qrCodeBase64){
+
+qr.src=
+"data:image/png;base64,"+
+data.pix.qrCodeBase64;
+
+}else{
+
+qr.style.display="none";
+
+}
+
+
+document.getElementById("pixCode").value=
+data.pix.copiaECola || "";
+
+document.getElementById("paymentStatus").textContent=
+"⏳ Aguardando pagamento...";
+
+acompanharPedido();
+
+}catch(error){
+
+mostrarErro(
+"erroPlano",
+error.message || "Erro ao iniciar pagamento."
+);
+
+botoes.forEach(btn=>{
+btn.disabled=false;
+});
+
+}
+
+}
+
+
+async function acompanharPedido(){
+
+if(!cliente.orderId)return;
+
+try{
+
+const response=await fetch(
+"/api/order/"+encodeURIComponent(cliente.orderId)
+);
+
+const data=await response.json();
+
+if(!response.ok || !data.success){
+
+throw new Error(
+data.error || "Erro ao consultar pedido."
+);
+
+}
+
+
+if(data.order.status==="approved" && data.order.produto){
+
+mostrarEntrega(data.order.produto);
+return;
+
+}
+
+
+if(
+data.order.status==="rejected" ||
+data.order.status==="cancelled" ||
+data.order.status==="refunded"
+){
+
+document.getElementById("paymentStatus").textContent=
+"❌ Pagamento não aprovado.";
+
+return;
+
+}
+
+
+document.getElementById("paymentStatus").textContent=
+"⏳ Aguardando pagamento...";
+
+setTimeout(acompanharPedido,4000);
+
+}catch(error){
+
+console.error(error);
+
+setTimeout(acompanharPedido,5000);
+
+}
+
+}
+
 
 function mostrarEntrega(produto){
+
+document.getElementById("payment").style.display="none";
 document.getElementById("plans").style.display="none";
 document.getElementById("delivery").style.display="block";
-document.getElementById("productCode").textContent=produto;
+
+document.getElementById("androidLink").textContent=
+produto.android || "Não informado";
+
+document.getElementById("iosLink").textContent=
+produto.ios || "Não informado";
+
+document.getElementById("accessCode").textContent=
+produto.codigo || "Não informado";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
-function copiar(){
-const texto=document.getElementById("productCode").textContent;
-navigator.clipboard.writeText(texto).then(()=>alert("Produto copiado!"));
+
+async function copiarPix(){
+
+const texto=document.getElementById("pixCode").value;
+
+if(!texto)return;
+
+try{
+
+await navigator.clipboard.writeText(texto);
+
+alert("Código Pix copiado!");
+
+}catch{
+
+alert("Não foi possível copiar automaticamente.");
+
 }
+
+}
+
+
+async function copiarCampo(id){
+
+const texto=document.getElementById(id).textContent;
+
+if(!texto || texto==="-" || texto==="Não informado")return;
+
+try{
+
+await navigator.clipboard.writeText(texto);
+
+alert("Copiado!");
+
+}catch{
+
+alert("Não foi possível copiar automaticamente.");
+
+}
+
+}
+
 </script>
+
 </body>
 </html>
